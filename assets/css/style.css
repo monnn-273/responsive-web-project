@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Sans:wght@200;300;400;500&family=Signika+Negative:wght@300;500&display=swap');
+
+* {
+    font-family: 'Fira Sans';
+}
+
+.btn-success {
+    padding: 7px 40px;
+}
+
+.button1 a{
+    color: white;
+}
+
+.bg-jumbo {
+    border: 0;
+}
+
+.text-jumbo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-footer {
+    list-style-type: none;
+}
+
+.list-footer a{
+    color: #212529;
+}
