@@ -32,6 +32,37 @@ function displayArticles() {
     });
 }
 
+function displayArticlesHomepage() {
+  fetch(apiUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      const articleList = document.getElementById("article-list-homepage");
+      articleList.innerHTML = "";
+
+      data.slice(0, 6).forEach((article) => {
+        const card = document.createElement("div");
+        card.classList.add("col-md-6");
+        card.innerHTML = `
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="${article.image}" class="img-fluid h-100 rounded-start object-fit-content" style="max-height:" />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="fs-5 fw-bold">${article.title}</h5>
+                            <p class="fw-lighter fs-6">${article["preview-text"]}</p>
+                            <a href="article-detail.html?id=${article.id}" class="btn btn-sm btn-outline-success">Baca Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+          </div>
+          `;
+        articleList.appendChild(card);
+      });
+    });
+}
+
 // Function to fetch data for the selected article and display it on the webpage
 function displayArticle() {
   // Get the article ID from the URL parameters
